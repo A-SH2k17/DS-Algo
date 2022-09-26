@@ -1,0 +1,32 @@
+KMP Algorithm:
+input string and substring
+store the size of string in m and substring in n
+create an array called lps with size of n
+create the long "proper" preifx pattern using the lps array
+assign 0 to 2 variables i and j (i points to string and j points to substring)
+while distance between m and i is greater than or equal to the distance between n and j:
+    if i and j point to the same character:
+        increment both by one
+    els:
+        if j is not at zero:
+            set the value found in the lps array at the position of j-1 to the variable j
+        else:
+            increment i by one
+    
+    if j is equal to m:
+        print found at index i-j
+        set the value found in the lps array at the position of j-1 to j
+
+
+LPS Pattern Algo:
+    initialize len to 0 and i to one
+    while i is less than the size of the substring:
+        if i and len pont to the smae character:
+            increment both i and len by 1
+            set the value of len to array[i]
+        else:
+            if len is not 0:
+                len equals to the value of arr[len-1]
+            else:
+                arr[i]=0
+                increment i by 1
